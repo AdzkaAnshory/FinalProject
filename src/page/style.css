@@ -1,0 +1,22 @@
+.radius {
+    border-radius: 15px;
+}
+
+.tr-border {
+    border-top: 1px;
+    border-bottom: 1px;
+}
+
+.pad {
+    padding: 5px 0 5px 0;
+}
+
+.section-one {
+    margin: 10px 0 10px 0;
+    width: 50%;
+}
+
+.section-two {
+    margin: 10px 0 10px 0;
+}
+
