@@ -62,6 +62,19 @@ public class Kereta {
         this.status_kursi = status_kursi;
     }
 
+    public Kereta(Integer id, String nama, String kelas, String tgl_pergi, String jam_pergi, String jam_sampai, String lama_perjalanan, String asal, String tujuan, String harga) {
+        this.id = id;
+        this.nama = nama;
+        this.kelas = kelas;
+        this.tgl_pergi = tgl_pergi;
+        this.jam_pergi = jam_pergi;
+        this.jam_sampai = jam_sampai;
+        this.lama_perjalanan = lama_perjalanan;
+        this.asal = asal;
+        this.tujuan = tujuan;
+        this.harga = harga;
+    }
+
     public Kereta(String no_kursi, String status_kursi) {
         this.no_kursi = no_kursi;
         this.status_kursi = status_kursi;

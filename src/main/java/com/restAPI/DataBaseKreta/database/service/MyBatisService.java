@@ -37,16 +37,15 @@ public class MyBatisService {
         return list;
     }
 
-    public static List<Kereta> selectAsal(String asal, String tujuan, String status_kursi) throws IOException {
+    public static List<Kereta> selectAsal(String asal, String tujuan) throws IOException {
         connectMyBatis();
         Kereta where = new Kereta();
         where.setAsal(asal);
         where.setTujuan(tujuan);
-        where.setStatus_kursi(status_kursi);
         List<Kereta> kereta = session.selectList("Kereta.selectAsal", where);
         List<Kereta> list = new ArrayList<Kereta>();
         for(Kereta st : kereta ){
-            list.add(new Kereta(st.getId(),st.getNama(),st.getKelas(),st.getTgl_pergi(),st.getJam_pergi(),st.getJam_sampai(),st.getLama_perjalanan(),st.getAsal(), st.getTujuan(), st.getHarga(), st.getNo_kursi(), st.getStatus_kursi()));
+            list.add(new Kereta(st.getId(),st.getNama(),st.getKelas(),st.getTgl_pergi(),st.getJam_pergi(),st.getJam_sampai(),st.getLama_perjalanan(),st.getAsal(), st.getTujuan(), st.getHarga()));
         }
         System.out.println("Records Read Successfully ");
         session.commit();

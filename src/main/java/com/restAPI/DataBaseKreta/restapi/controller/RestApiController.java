@@ -111,9 +111,9 @@ public class RestApiController {
         }
     }
 
-    @GetMapping("/kereta/{asal}/{tujuan}/{status_kursi}")
-    public ResponseEntity<List<Kereta>> selectBandung(@PathVariable String asal, @PathVariable String tujuan, @PathVariable String status_kursi) throws IOException {
-        List<Kereta> keretas = service.selectAsal(asal, tujuan, status_kursi);
+    @GetMapping("/kereta/{asal}/{tujuan}")
+    public ResponseEntity<List<Kereta>> selectBandung(@PathVariable String asal, @PathVariable String tujuan) throws IOException {
+        List<Kereta> keretas = service.selectAsal(asal, tujuan);
         if(keretas.isEmpty()){
             return new ResponseEntity<>(keretas, HttpStatus.NOT_FOUND);
         }else{

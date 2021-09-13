@@ -45,11 +45,15 @@
     </update>
 
     <select id="selectAll" resultMap="result">
-        SELECT kereta.nama, kereta.kelas, jadwal.tgl_pergi, jadwal.jam_pergi, jadwal.jam_sampai, jadwal.lama_perjalanan, jadwal.asal, jadwal.tujuan, jadwal.harga, kursi.no_kursi, kursi.status_kursi FROM kereta JOIN jadwal ON kereta.id=jadwal.id_kereta JOIN kursi ON jadwal.id_jadwal=kursi.id_jadwal
+        SELECT kereta.nama, kereta.kelas, jadwal.tgl_pergi, jadwal.jam_pergi, jadwal.jam_sampai, jadwal.lama_perjalanan, jadwal.asal, jadwal.tujuan, jadwal.harga FROM kereta JOIN jadwal ON kereta.id=jadwal.id_kereta
     </select>
+
+<!--    <select id="selectAllll" resultMap="result">-->
+<!--        SELECT kereta.nama, kereta.kelas, jadwal.tgl_pergi, jadwal.jam_pergi, jadwal.jam_sampai, jadwal.lama_perjalanan, jadwal.asal, jadwal.tujuan, jadwal.harga, kursi.no_kursi, kursi.status_kursi FROM kereta JOIN jadwal ON kereta.id=jadwal.id_kereta JOIN kursi ON jadwal.id_jadwal=kursi.id_jadwal-->
+<!--    </select>-->
     <!--Asal-->
     <select id="selectAsal" resultMap="result">
-        SELECT kereta.nama, kereta.kelas, jadwal.tgl_pergi, jadwal.jam_pergi, jadwal.jam_sampai, jadwal.lama_perjalanan, jadwal.asal, jadwal.tujuan, jadwal.harga, kursi.no_kursi, kursi.status_kursi FROM kereta JOIN jadwal ON kereta.id=jadwal.id_kereta JOIN kursi ON jadwal.id_jadwal=kursi.id_jadwal WHERE jadwal.asal= #{asal} AND jadwal.tujuan= #{tujuan} AND kursi.status_kursi LIKE #{status_kursi}
+        SELECT kereta.nama, kereta.kelas, jadwal.tgl_pergi, jadwal.jam_pergi, jadwal.jam_sampai, jadwal.lama_perjalanan, jadwal.asal, jadwal.tujuan, jadwal.harga FROM kereta JOIN jadwal ON kereta.id=jadwal.id_kereta WHERE jadwal.asal= #{asal} AND jadwal.tujuan= #{tujuan}
     </select>
 
     <select id="selectAsal2" resultMap="result">
