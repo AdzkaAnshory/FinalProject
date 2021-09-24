@@ -1,3 +1,7 @@
+# Run di google chrome 
+# instal ekstensi Moesif CORS agar fetching data dapat dilakukan (allow CORS)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
