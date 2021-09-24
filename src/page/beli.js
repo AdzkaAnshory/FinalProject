@@ -24,7 +24,6 @@ class BeliTIket extends Component {
         axios.get('http://localhost:8081/KeretaApi/kereta/'+asal+'/'+tujuan+'')
         .then(res => {
             const filterJadwal = res.data;
-            console.log("filterJadwal" ,filterJadwal)
             this.setState({ filterJadwal })
         })
         .catch(err => {
@@ -35,8 +34,12 @@ class BeliTIket extends Component {
         })
     }
 
-    beliTiket = () => {
-
+    beliTiket = e => {
+        const idx = e.target.attributes[0].value
+        const setPembelianTiket = this.props.tiket
+        const tiket = this.state.filterJadwal[idx]
+        console.log(this.state.filterJadwal[idx]);
+        setPembelianTiket(tiket)
     }
 
     renderPage = () => {
@@ -67,7 +70,9 @@ class BeliTIket extends Component {
                         <td>{filter.tujuan}</td>
                         <td>{filter.harga}</td>
                         <td>
-                            <Button type={"submit"} className={"btn btn-success btn-lg btn-block radius"} onClick={this.beliTiket} nameButton={"Beli Tiket"}/>
+                        <Link to="/data">
+                            <Button dataId={idx} type={"submit"} className={"btn btn-success btn-lg btn-block radius"} onClick={this.beliTiket} nameButton={"Beli Tiket"}/>
+                        </Link>
                         </td>
                     </tr >
                 )
@@ -89,7 +94,7 @@ class BeliTIket extends Component {
                     <Link to="/dash">
                         <Button  className={"btn btn-success btn-lg btn-block radius"} nameButton={"Kembali"}></Button>
                     </Link>
-                  <div className={"section-two"}>
+                <div className={"section-two"}>
                     <table cellPadding="10px" >
                         <thead>
                             <tr>
@@ -105,7 +110,7 @@ class BeliTIket extends Component {
                             {this.renderPage()}
                         </tbody>
                     </table>
-                  </div>
+                </div>
                 
               </div>
             </div>

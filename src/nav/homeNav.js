@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import MyTiket from '../page/mytiket';
 import BeliTIket from '../page/beli';
 import Dashboard from '../page/dash';
+import DataPenumpang from '../page/datapenumpang';
+import Pembayaran from '../page/pembayaran';
 
 class HomeNavbar extends Component {
     constructor(props) {
@@ -12,6 +14,7 @@ class HomeNavbar extends Component {
           asal : "",
           tujuan : "",
           jmlTiket : "",
+          tiket : [],
          }
     }
 
@@ -19,6 +22,12 @@ class HomeNavbar extends Component {
         const setStatusLogin = this.props.setStatusLogin
 
         setStatusLogin("logout");
+    }
+
+    setPembelianTiket = tiket => {
+      this.setState({
+        tiket : tiket
+      })
     }
 
     setFilter = (asal, tujuan, jmlTiket) => {
@@ -61,10 +70,16 @@ class HomeNavbar extends Component {
                     <Dashboard setFilter={this.setFilter}/>
                   </Route>
                   <Route path="/beli" >
-                    <BeliTIket asal={this.state.asal} tujuan={this.state.tujuan} jmlTiket={this.state.jmlTiket}/>
+                    <BeliTIket tiket={this.setPembelianTiket} asal={this.state.asal} tujuan={this.state.tujuan} />
+                  </Route>
+                  <Route path="/data">
+                    <DataPenumpang tiket={this.state.tiket} jmlTiket={this.state.jmlTiket}/>
                   </Route>
                   <Route path="/mytiket">
                     <MyTiket />
+                  </Route>
+                  <Route path="/mytiket">
+                    <Pembayaran />
                   </Route>
                 </Switch>
               </div>

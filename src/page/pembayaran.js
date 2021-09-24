@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 
-class MyTiket extends Component {
+class Pembayaran extends Component {
     constructor(props) {
         super(props);
         this.state = { 
@@ -32,7 +32,7 @@ class MyTiket extends Component {
 
     renderPage = () => {
         const {tiket, namaPenumpang, umur, no_kursi, statusPembayaran} = this.state
-        if(tiket !== [])
+        if(tiket !== "")
             return (
                     <tr>
                         <td>
@@ -118,4 +118,4 @@ const mapDispatchToProps = dispatch => ({
     invoice: (tiket, namaPenumpang, umur, no_kursi) => dispatch({ type: "Proses_Pembayaran", payload: { tiket, namaPenumpang, umur, no_kursi } })
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyTiket);
+export default connect(mapStateToProps, mapDispatchToProps)(Pembayaran);

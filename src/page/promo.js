@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Fade } from "react-slideshow-image";
 import 'react-slideshow-image/dist/styles.css'
+import Image from '../component/img';
 import promo1 from '../img/promo1.jpg'
 import promo2 from '../img/promo2.jpg'
 import promo3 from '../img/promo3.jpg'
@@ -20,17 +21,17 @@ class Promo extends Component {
           <Fade>
             <div className="each-fade">
               <div className="image-container">
-                <img className="promo" src={promo1} alt="Promo 1"/>
+                <Image className="promo" src={promo1} alt="Promo 1"/>
               </div>
             </div>
             <div className="each-fade">
               <div className="image-container">
-                <img className="promo" src={promo2} alt="Promo 2"/>
+                <Image className="promo" src={promo2} alt="Promo 2"/>
               </div>
             </div>
             <div className="each-fade">
               <div className="image-container">
-                <img className="promo" src={promo3} alt="Promo 3"/>
+                <Image className="promo" src={promo3} alt="Promo 3"/>
               </div>
             </div>
           </Fade>

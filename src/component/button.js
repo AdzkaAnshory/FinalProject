@@ -6,10 +6,10 @@ class Button extends Component {
         this.state = {  }
     }
     render() { 
-        const { type, className, onClick, nameButton } = this.props
+        const { dataId, type, className, onClick, nameButton } = this.props
         return ( 
             <>
-                <button type={type} className={className} onClick={onClick}>{nameButton}</button>
+                <button data-id={dataId} type={type} className={className} onClick={onClick}>{nameButton}</button>
             </>
          );
     }

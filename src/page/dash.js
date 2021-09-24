@@ -35,7 +35,7 @@ class Dashboard extends Component {
         <div className="outer-home">
         <div className="inner-home">
             <Promo />
-            <div>
+            <div style={{textAlign : "center"}}>
                 <h3>Beli Tiket</h3>
             </div>
             <div className="section-one">
@@ -48,7 +48,6 @@ class Dashboard extends Component {
                       <option>Surabaya</option>
                       <option>Yogyakarta</option>
                   </select>
-                  {/* <Input type={"text"}  placeholder="Asal" /> */}
               </div>
 
               <div className="form-group pad">
@@ -60,7 +59,6 @@ class Dashboard extends Component {
                       <option>Surabaya</option>
                       <option>Yogyakarta</option>
                   </select>
-                  {/* <Input type={"text"} nameInput="tujuan" className={"form-control radius"} onChangeEvent={this.setValue} placeholder={"Tujuan"} /> */}
               </div>
 
               <div className="form-group pad">
@@ -78,7 +76,8 @@ class Dashboard extends Component {
             </div>
           
         </div>
-      </div>)
+        </div>
+        )
         
     }
 
