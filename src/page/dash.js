@@ -4,6 +4,7 @@ import Label from '../component/label';
 import Button from '../component/button';
 import './style.css'
 import { Link } from 'react-router-dom';
+import Promo from './promo';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -30,8 +31,10 @@ class Dashboard extends Component {
     }
 
     renderPage = () => {
-        return(<div className="outer-home">
+        return(
+        <div className="outer-home">
         <div className="inner-home">
+            <Promo />
             <div>
                 <h3>Beli Tiket</h3>
             </div>
